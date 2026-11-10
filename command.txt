@@ -1,0 +1,15 @@
+# run server frontend application
+ng serve
+# run server frontend application with open browser
+ng s -o
+# generate component
+ng generate component <component-name>
+ng g c <component-name>
+# generate component without test file
+ng generate component <component-name> --skip-tests
+ng g c <component-name>  --skip-tests
+# generate service
+ng generate service <service-name>
+
+# add angular material
+ng add @angular/material
