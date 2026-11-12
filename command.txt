@@ -10,6 +10,15 @@ ng generate component <component-name> --skip-tests
 ng g c <component-name>  --skip-tests
 # generate service
 ng generate service <service-name>
+ng g s <service-name>
 
 # add angular material
 ng add @angular/material
+
+# generate component pages from location, workarea, profile, user, workstation, agenda
+ng g c pages/location --skip-tests
+ng g c pages/workarea --skip-tests
+ng g c pages/profile --skip-tests
+ng g c pages/user --skip-tests
+ng g c pages/workstation --skip-tests
+ng g c pages/agenda --skip-tests
