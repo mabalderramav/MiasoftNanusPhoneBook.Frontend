@@ -22,3 +22,9 @@ ng g c pages/profile --skip-tests
 ng g c pages/user --skip-tests
 ng g c pages/workstation --skip-tests
 ng g c pages/agenda --skip-tests
+
+# generate service from location
+ng g s services/location --skip-tests
+
+# generate environment
+ng g environments
