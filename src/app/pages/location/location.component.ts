@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { LocationService } from '../../services/location.service';
 import { Location } from '../../model/location';
 
@@ -10,9 +10,9 @@ import { Location } from '../../model/location';
 })
 export class LocationComponent implements OnInit {
   private readonly locationService = inject(LocationService);
-  protected locations: Location[] = [];
+  protected readonly locations = signal<Location[]>([]);
 
   ngOnInit() {
-    this.locationService.findAll().subscribe((locations) => (this.locations = locations));
+    this.locationService.findAll().subscribe((locations) => this.locations.set(locations));
   }
 }
