@@ -1,15 +1,14 @@
-import { inject, Service } from '@angular/core';
-import { environment } from '../../environments/environment.development';
-import { HttpClient } from '@angular/common/http';
+import { Service } from '@angular/core';
+import { GenericService } from './generic.service';
 import { Location } from '../model/location';
+import { environment } from '../../environments/environment';
 
+/**
+ * LocationService is a service class that extends the GenericService to provide CRUD operations
+ * specifically for the Location entity. It defines the base URL for the Location API endpoints
+ * and utilizes the methods inherited from GenericService to perform HTTP requests.
+ */
 @Service()
-export class LocationService {
-  private readonly url: string = `${environment.HOST}/api/v1`;
-  private readonly http: HttpClient = inject(HttpClient);
-
-  findAll() {
-    const locationEndpoint: string = `${this.url}/locations`;
-    return this.http.get<Location[]>(locationEndpoint);
-  }
+export class LocationService extends GenericService<Location>{
+  protected override url = `${environment.HOST}/api/v1/locations`;
 }
